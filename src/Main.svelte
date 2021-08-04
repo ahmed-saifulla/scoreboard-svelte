@@ -1,5 +1,20 @@
 <script>
   import Card from "./Card.svelte";
+
+  let players = [
+    {
+      name: "Alice",
+      score: 10,
+    },
+    {
+      name: "Bob",
+      score: 28,
+    },
+    {
+      name: "Cathy",
+      score: 9,
+    },
+  ];
 </script>
 
 <main class="main">
@@ -7,9 +22,9 @@
     <h5>Player</h5>
     <h5>Score</h5>
   </div>
-  <Card />
-  <Card />
-  <Card />
+  {#each players as player}
+    <Card {player} />
+  {/each}
 </main>
 
 <style>

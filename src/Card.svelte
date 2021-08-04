@@ -1,9 +1,10 @@
 <script>
+  export let player;
 </script>
 
 <div class="card">
-  <p>Card</p>
-  <p>100.5</p>
+  <p>{player.name}</p>
+  <p>{player.score}</p>
   <input type="number" />
   <button>Edit</button>
 </div>
