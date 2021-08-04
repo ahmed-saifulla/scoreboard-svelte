@@ -20,8 +20,20 @@
 <div class="newPlayer">
   <form on:submit={onSubmit}>
     <h6>New Player</h6>
-    <input type="text" name="" id="" bind:value={player.name} />
-    <input type="number" name="" id="" bind:value={player.score} />
+    <input
+      placeholder="Name"
+      type="text"
+      name=""
+      id=""
+      bind:value={player.name}
+    />
+    <input
+      placeholder="Score"
+      type="number"
+      name=""
+      id=""
+      bind:value={player.score}
+    />
     <button type="submit" class="add-btn">Add</button>
   </form>
 </div>
