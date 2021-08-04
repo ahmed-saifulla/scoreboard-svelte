@@ -1,5 +1,10 @@
 <script>
+  import { createEventDispatcher } from "svelte";
+  const dispatch = createEventDispatcher();
+
   export let player;
+
+  const deletePlayer = () => dispatch("deletePlayer", player.name);
 </script>
 
 <div class="card">
@@ -7,6 +12,7 @@
   <p>{player.score}</p>
   <input type="number" />
   <button>Edit</button>
+  <button on:click={deletePlayer} class="delete-btn">X</button>
 </div>
 
 <style>
@@ -28,5 +34,12 @@
   .card > p {
     width: 40%;
     text-align: center;
+  }
+
+  .delete-btn {
+    padding: 6px;
+    margin: 0 6px;
+    background-color: red;
+    color: #fff;
   }
 </style>

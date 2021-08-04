@@ -21,6 +21,10 @@
     const newPlayer = e.detail;
     players = [...players, newPlayer];
   };
+
+  const deletePlayer = (e) => {
+    players = players.filter((playerItem) => playerItem.name !== e.detail);
+  };
 </script>
 
 <main class="main">
@@ -33,7 +37,7 @@
     <p class="noPlayers">No Players</p>
   {:else}
     {#each players as player}
-      <Card {player} />
+      <Card {player} on:deletePlayer={deletePlayer} />
     {/each}
   {/if}
 </main>
