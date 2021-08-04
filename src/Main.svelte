@@ -1,5 +1,6 @@
 <script>
   import Card from "./Card.svelte";
+  import NewPlayer from "./NewPlayer.svelte";
 
   let players = [
     {
@@ -15,16 +16,26 @@
       score: 9,
     },
   ];
+
+  const addPlayer = (e) => {
+    const newPlayer = e.detail;
+    players = [...players, newPlayer];
+  };
 </script>
 
 <main class="main">
+  <NewPlayer on:addPlayer={addPlayer} />
   <div class="header">
     <h5>Player</h5>
     <h5>Score</h5>
   </div>
-  {#each players as player}
-    <Card {player} />
-  {/each}
+  {#if players.length === 0}
+    <p class="noPlayers">No Players</p>
+  {:else}
+    {#each players as player}
+      <Card {player} />
+    {/each}
+  {/if}
 </main>
 
 <style>
@@ -46,6 +57,9 @@
   }
   .header > h5 {
     width: 40%;
+    text-align: center;
+  }
+  .noPlayers {
     text-align: center;
   }
 </style>
