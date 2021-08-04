@@ -22,14 +22,14 @@
     <h6>New Player</h6>
     <input type="text" name="" id="" bind:value={player.name} />
     <input type="number" name="" id="" bind:value={player.score} />
-    <button type="submit">Add</button>
+    <button type="submit" class="add-btn">Add</button>
   </form>
 </div>
 
 <style>
   .newPlayer {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
   }
   .newPlayer > form {
     display: flex;
@@ -37,5 +37,9 @@
     width: 300px;
     padding: 10px;
     text-align: center;
+  }
+  .add-btn {
+    color: white;
+    background-color: rgb(44, 43, 145);
   }
 </style>
